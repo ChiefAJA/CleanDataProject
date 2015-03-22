@@ -1,0 +1,20 @@
+final_ans     final output of tidy dataset 
+
+sub_test      raw data loaded from test subject data
+sub_train     raw data loaded from training subject data
+
+total_test    combines the test data into one data set
+total_train   combines the traingin data into one data set 
+total         combines the total_test and total_train data 
+temp          temporary variable for cleaing up data into tidy data set 
+temp2         temporary variable for grouping the data
+
+x             vector that includes the variable names that are included in the features file
+x_columnames  raw data including the variable names that are included in the features file from the raw data 
+x_test        raw data loaded from test X data
+x_train       raw data loaded from the training X data
+
+
+y_test        raw data loaded from test Y data
+y_train       raw data loaded from the training Y data 
+
