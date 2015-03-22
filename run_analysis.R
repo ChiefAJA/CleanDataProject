@@ -34,10 +34,12 @@ total<- rbind(total_test,total_train)
 valid_column_names <- make.names(names = names(total), unique = TRUE, allow_ = TRUE)
 names(total) <- valid_column_names
 
+
+##select all variables that include mean or std in its name to be included in the data set
 temp <- select(total,contains("subject"),contains("mean"), contains("std"), contains("activity"))
 
 
-## rename activities to be more descriptive 
+## rename activities within the data set variable "activity" to be more descriptive 
 test <- temp[,88] == 1
 temp[test,88] = "WALKING"
 
@@ -56,7 +58,7 @@ temp[test,88] = "STANDING"
 test <- temp[,88] == 6
 temp[test,88] = "LAYING"
 
-
+##create average of each variable grouped by subject and activity for the final data set 
 temp2 <- group_by(temp,subject, activity)
 final_ans<- summarise_each(temp2, funs(mean))
 
